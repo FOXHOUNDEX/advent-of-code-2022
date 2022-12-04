@@ -1,0 +1,1 @@
+install nodemon and use `make run` to run script in watch mode
