@@ -29,37 +29,28 @@ int bruteForce(String line, int quantityOfCharsNeeded) {
   return -1;
 }
 
-// int slidingWindow(String line, int quantityOfCharsNeeded) {
-//   // Set<String> set = {};
-//   Map<String, int> map = {};
+int slidingWindow(String line, int quantityOfCharsNeeded) {
+  Map<String, int> map = {};
 
-//   // var buildingLine = "";
-//   int currentSequence = 0;
-//   int startingIndex = -1;
+  var window = 0;
+  for (var i = 0; i < line.length; i++) {
+    window += 1;
+    var currentChar = line[i];
+    if (map.containsKey(currentChar)) {
+      var prevIndex = map[currentChar] as int;
+      var diff = i - prevIndex;
+      if (diff < quantityOfCharsNeeded) {
+        if (diff < window) {
+          window = diff;
+        }
+      }
+    }
 
-//   for (var i = 0; i < line.length; i++) {
-//     var currentChar = line[i];
-//     if (!map.containsKey(currentChar)) {
-//       map[currentChar] = i;
-//       ++currentSequence;
-//     }
+    map[currentChar] = i;
+    if (window == quantityOfCharsNeeded) {
+      return i + 1;
+    }
+  }
 
-//     if (startingIndex == -1) {
-//       startingIndex = i;
-//     }
-
-//     if (!buildingLine.contains(line[i])) {
-//       buildingLine += line[i];
-//     } else {
-//       startingIndex = -1;
-//     }
-
-//     print("buildingLine: $buildingLine");
-
-//     if (buildingLine.length == quantityOfCharsNeeded) {
-//       return startingIndex;
-//     }
-//   }
-
-//   return -1;
-// }
+  return -1;
+}

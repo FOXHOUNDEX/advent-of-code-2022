@@ -11,10 +11,10 @@ void main() {
   });
 
   test('message tests', () {
-    expect(day6.bruteForce("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 14), 19);
-    expect(day6.bruteForce("bvwbjplbgvbhsrlpgdmjqwftvncz", 14), 23);
-    expect(day6.bruteForce("nppdvjthqldpwncqszvftbrmjlhg", 14), 23);
-    expect(day6.bruteForce("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 14), 29);
-    expect(day6.bruteForce("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 14), 26);
+    expect(day6.slidingWindow("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 14), 19);
+    expect(day6.slidingWindow("bvwbjplbgvbhsrlpgdmjqwftvncz", 14), 23);
+    expect(day6.slidingWindow("nppdvjthqldpwncqszvftbrmjlhg", 14), 23);
+    expect(day6.slidingWindow("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 14), 29);
+    expect(day6.slidingWindow("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 14), 26);
   });
 }
